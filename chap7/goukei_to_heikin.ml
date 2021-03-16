@@ -8,7 +8,7 @@ let test1 = goukei 20 30 40 50 60 = 200
 let test2 = goukei 15 15 15 15 15 = 75
 
 (* 目的：国語・数学・英語・理科・社会の点数を受取り、合計点と平均点の組を返す *)
-(* goukei_to_heikin : int -> int -> int -> int -> int -> (int, float) *)
+(* goukei_to_heikin : int -> int -> int -> int -> int -> int * float *)
 let goukei_to_heikin n_lang math eng sci soci 
     = (goukei n_lang math eng sci soci
         , (float_of_int (goukei n_lang math eng sci soci)) /. kamoku_suu)
