@@ -1,0 +1,16 @@
+sudo apt update
+sudo apt install -y bubblewrap build-essential curl git m4 unzip
+sudo sh -c "$(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+
+opam init -y --disable-sandboxing
+opam switch list-available ocaml-base-compiler
+opam switch create X.XX.X
+eval $(opam env)
+
+opam install depext
+opam install user-setup
+opam depext menhir dune ounit
+opam install menhir dune ounit tuareg
+opam user-setup install
+
+「ocaml」でインタプリタ起動
